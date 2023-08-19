@@ -8,7 +8,7 @@ OFILES=\
 	blas.$O\
 	dtoa.$O\
 	fdim.$O\
-	FPcontrol-$TARGTYPE.$O\
+#	FPcontrol-$TARGTYPE.$O\
 	gemm.$O\
 	g_fmt.$O\
 	gfltconv.$O\

@@ -1,7 +1,3 @@
-//PAD: backported from plan9 latest libc
-// to not get some "illegal rune" error when compiling libc/
-//#include	<u.h>
-//#include	<libc.h>
 #include "lib9.h"
 
 #define Bit(i) (7-(i))

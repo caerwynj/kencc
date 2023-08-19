@@ -1,0 +1,4 @@
+*.o
+o.out
+y.tab.c
+y.tab.h

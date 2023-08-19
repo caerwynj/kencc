@@ -73,10 +73,11 @@ calloc(size_t m, size_t n)
 	return alloc(m*n);
 }
 
-//pad: this causes some error under cygwin because
+/* /pad: this causes some error under cygwin because
 // even if 5c/8c (and 5a/8a) do not call realloc directly,
 // cygwin.dll does and it assumes you did not alter the
 // malloc/free routines, hence the #ifndef above
+ */
 void*
 realloc(void *p, size_t n)
 {

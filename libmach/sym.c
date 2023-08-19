@@ -43,7 +43,7 @@ static	int	debug = 0;
 
 static	Sym	**autos;		/* Base of auto variables */
 static	File	*files;			/* Base of file arena */
-//PAD: fmax -> fmaX because fmax is a macro under recent Linux distributions
+/* PAD: fmax -> fmaX because fmax is a macro under recent Linux distributions */
 static	int	fmaX;			/* largest file path index */ 
 static	Sym	**fnames;		/* file names path component table */
 static	Sym	**globals;		/* globals by addr table */
@@ -94,7 +94,6 @@ syminit(int fd, Fhdr *fp)
 	Sym *p;
 	int i, size;
 	Biobuf b;
-	//extern void thumbpctab(Biobuf*, Fhdr*);
 
 	if(fp->symsz == 0)
 		return 0;
@@ -194,8 +193,6 @@ syminit(int fd, Fhdr *fp)
 		}
 		pclineend = pcline+fp->lnpcsz;
 	}
-	//if(fp->type == FARM)	/* thumb pc table */
-          //	thumbpctab(&b, fp);
 	return nsym;
 }
 

@@ -17,7 +17,7 @@ typedef	struct	Term	Term;
 typedef	struct	Init	Init;
 typedef	struct	Bits	Bits;
 
-// typedef	Rune	TRune;	/* target system type */
+/* typedef	Rune	TRune;	 target system type */
 typedef	ushort	TRune;	/* target system type */
 
 #define	NHUNK		50000L
@@ -30,7 +30,7 @@ typedef	ushort	TRune;	/* target system type */
 #define	NTERM		10
 #define	MAXALIGN	7
 
-//#define	SIGN(n)		(1ULL<<(n-1)) // in plan9-github
+/* #define	SIGN(n)		(1ULL<<(n-1))  in plan9-github */
 #define	SIGN(n)		((uvlong)1<<(n-1))
 #define	MASK(n)		(SIGN(n)|(SIGN(n)-1))
 

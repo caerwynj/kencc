@@ -473,7 +473,7 @@ com64(Node *n)
 			case TUCHAR:
 				a = nodv2uc;
 				goto setfnx;
-			case TIND:	// small pun here
+			case TIND:	
 				a = nodv2ul;
 				goto setfnx;
 			}

@@ -93,8 +93,9 @@ enum	as
 	AMULD,
 	ADIVF,
 	ADIVD,
-//	ASQRTF,
-//	ASQRTD,
+/*	ASQRTF,
+ *	ASQRTD,
+ */
 
 	ASRL,
 	ASRA,

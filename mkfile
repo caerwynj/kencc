@@ -9,8 +9,8 @@ DIRS=\
 	libmath\
     \
 	mk\
-	lex\
-	yacc\
+#	lex\
+#	yacc\
     \
 	cc\
 	tc\

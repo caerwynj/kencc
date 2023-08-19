@@ -541,8 +541,9 @@ sualign(Type *t)
 				l->offset = o;
 			} else {
 				if(l->width < 0 ||
-                                   //PAD: backport of latest plan9,
-                                   // to avoid errors about incomplete array when last field of a structure
+                                   /* /PAD: backport of latest plan9,
+                                    * to avoid errors about incomplete array when last field of a structure
+				    */
 				   l->width == 0 && l->down != T)
 					if(l->sym)
 						diag(Z, "incomplete structure element: %s",
@@ -1148,9 +1149,9 @@ dcllabel(Sym *s, int f)
 		if(f) {
 			if(n->complex)
 				diag(Z, "label reused: %s", s->name);
-			n->complex = 1;	// declared
+			n->complex = 1;	
 		} else
-			n->addable = 1;	// used
+			n->addable = 1;	
 		return n;
 	}
 

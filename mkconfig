@@ -4,16 +4,16 @@
 #	the software will be built; the target system is where it will run.
 #	They are almost always the same.
 
-ROOT=/Users/me/Projects/plan9/cross/fork-kencc
+ROOT=/home/pi/github/kencc
 
 #   build system OS type
-SYSHOST=MacOSX
+SYSHOST=Linux
 
 #   target system OS type
-SYSTARG=MacOSX
+SYSTARG=Linux
 
 #   target system object type
-OBJTYPE=386
+OBJTYPE=arm
 
 #
 #	no changes required beyond this point

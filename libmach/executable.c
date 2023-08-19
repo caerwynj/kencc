@@ -65,21 +65,22 @@ ExecTable exectab[] =
 		sizeof(Exec),
 		beswal,
 		common },
-//	{ ELF_MAG,			/* any elf32 or elf64 */
-//		"elf executable",
-//		nil,
-//		FNONE,
-//		0,
-//		&mi386,
-//		sizeof(Ehdr64),
-//		nil,
-//		elfdotout },
+/*	{ ELF_MAG,			 any elf32 or elf64 
+ *		"elf executable",
+ * 		nil,
+ *		FNONE,
+ *		0,
+ *		&mi386,
+ *		sizeof(Ehdr64),
+ *		nil,
+ *		elfdotout },
+ */
 	{ MACH32_MAG,			/* 32-bit MACH (apple mac) */
 		"mach executable",
 		FI386,
 		&mi386,
 		sizeof(Machhdr),
-		leswal, // used to be nil
+		leswal, /* used to be nil */
 		machdotout },
 	{ 0 },
 };
@@ -102,8 +103,6 @@ crackhdr(int fd, Fhdr *fp)
 	fp->magic = magic = beswal(d.e.exec.magic);		/* big-endian */
 	for (mp = exectab; mp->magic; mp++) {
 		if (mp->magic == magic && nb >= mp->hsize) {
-			//if(mp->magic == V_MAGIC)
-			//	mp = couldbe4k(mp);
 
 			hswal((long *) &d, sizeof(d.e)/sizeof(long), mp->swal);
 			fp->type = mp->type;
@@ -357,7 +356,7 @@ machdotout(int fd, Fhdr *fp, ExecHdr *hp)
 	mp->reserved = swal(mp->reserved);
 
 	switch(mp->magic) {
-	case 0xFEEDFACE:	// 32-bit mach
+	case 0xFEEDFACE:	/* 32-bit mach */
 		if (mp->cputype != MACH_CPU_TYPE_X86) {
 			werrstr("bad MACH cpu type - not 386");
 			return 0;
@@ -375,10 +374,10 @@ machdotout(int fd, Fhdr *fp, ExecHdr *hp)
 		hdrsize = 28;
 		break;
 
-	case 0xFEEDFACF:	// 64-bit mach
+	case 0xFEEDFACF:	/* 64-bit mach */
 		werrstr("64 bit mach NOT SUPPORTED");
 		return 0;
-		//if (mp->cputype != MACH_CPU_TYPE_X86_64) {
+		/* if (mp->cputype != MACH_CPU_TYPE_X86_64) {
 		//	werrstr("bad MACH cpu type - not amd64");
 		//	return 0;
 		//}
@@ -391,7 +390,7 @@ machdotout(int fd, Fhdr *fp, ExecHdr *hp)
 		//fp->type = FAMD64;
 		//hdrsize = 32;
 		//break;
-
+		*/ 
 	default:
 		werrstr("not mach %#ux", mp->magic);
 		return 0;
@@ -476,7 +475,7 @@ machdotout(int fd, Fhdr *fp, ExecHdr *hp)
 		case MACH_SEGMENT_64:
 			werrstr("MACH SEGMENT 64 NOT SUPPORTED");
 				goto bad;
-			//if(mp->magic != 0xFEEDFACF) {
+			/* if(mp->magic != 0xFEEDFACF) {
 			//	werrstr("segment 32 in mach 64");
 			//	goto bad;
 			//}
@@ -511,6 +510,7 @@ machdotout(int fd, Fhdr *fp, ExecHdr *hp)
 			//	datasize = seg->filesize;
 			//	bsssize = seg->vmsize - seg->filesize;
 			//}
+			*/
 			break;
 		case MACH_UNIXTHREAD:
 			break;

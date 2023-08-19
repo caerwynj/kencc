@@ -227,6 +227,5 @@ outofdate(Node *node, Arc *arc, int eval)
          * It's a race, and the safer option is to do
          * extra building rather than not enough.
          */
-        //pad: except it's annoying when a machine compiles really really fast
 		return node->time <= arc->n->time;
 }
